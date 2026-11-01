@@ -1,0 +1,19 @@
+.github/workflow/build.yml
+name: Build Library Management System
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Compile C++ program
+        run: g++ -std=c++17 -Wall -Wextra main.cpp -o library_management_system
+
+
