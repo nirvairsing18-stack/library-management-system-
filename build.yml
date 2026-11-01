@@ -1,0 +1,20 @@
+name: Build C++ Library Management System
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Compile C++ source
+        run: g++ -std=c++17 -Wall -Wextra -O2 main.cpp -o library
+      - name: Upload compiled program
+        uses: actions/upload-artifact@v4
+        with:
+          name: library-management-linux
+          path: library
