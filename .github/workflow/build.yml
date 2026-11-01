@@ -1,5 +1,4 @@
-.github/workflow/build.yml
-name: Build Library Management System
+.github/workflows/build.yml
 
 on:
   push:
